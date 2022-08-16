@@ -1,0 +1,32 @@
+
+
+{% extends 'base.html' %}
+{% block title %}Update{% endblock %}
+{% block body %}
+
+<div class="row">
+
+
+    <div class="col-sm-4">
+        <h3 class="text-center alert alert-info">Add new </h3>
+        <form action="/mark_add/" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label>Student Id</label>
+                  {{ form.std_id }}
+            </div>
+            <div class="form-group">
+                <label>Student Marks</label>
+                  {{ form.mark }}
+            </div>
+            <div class="form-group">
+                <label>Subject</label>
+                  {{ form.subj }}
+            </div>
+
+            <input type="submit" class="btn btn-primary">
+        </form>
+    </div>
+</div>
+
+{% endblock %}
